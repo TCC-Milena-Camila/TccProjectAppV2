@@ -1,0 +1,55 @@
+form {
+
+  .form {
+
+    &-group {
+
+      position: relative;
+    }
+
+    &-control {
+
+      border: none;
+      border-bottom: 1.5px solid $primary;
+      padding: 0.375rem 0 0.75rem 3.5rem;
+
+      &:focus, &:active {
+
+        border: none;
+        border-bottom: 1.5px solid $primary;
+        box-shadow: none;
+      }
+    }
+  }
+
+  label {
+
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    text-transform: uppercase;
+    font-size: convert-to-rem(14px);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active
+  {
+    color: $primary !important;
+    -webkit-box-shadow: 0 0 0 30px var(--ion-background-color) inset !important;
+  }
+
+  .invalid-return {
+
+    position: absolute;
+    top: 111%;
+    left: 0;
+
+    color: $danger;
+
+    text-transform: uppercase;
+    font-size: convert-to-rem(10px);
+    letter-spacing: 1px;
+  }
+}
