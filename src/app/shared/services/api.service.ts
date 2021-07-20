@@ -25,7 +25,6 @@ export class ApiService {
 
     return getService$.pipe(
       map((response: ApiResponseModel) => response.data),
-      //map((sucess: boolean) => sucess),
       catchError((response)=>{
         console.log(response);
         return throwError(

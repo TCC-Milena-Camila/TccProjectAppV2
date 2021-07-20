@@ -1,6 +1,6 @@
-<ion-content>
+<ion-content *ngIf="(user$ | async) as user">
   <main>
-    <img src="../../../assets/ic-grifinoria.svg"
+    <img src="/assets/ic-grifinoria.svg"
          loading="lazy"
          width="360"
          height="221"
@@ -16,8 +16,8 @@
                 <div class="img-avatar-position">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
-                      <img src="../../../assets/img-user.jpg"
-                           srcset="../../../assets/img-user.jpg, ../../../assets/img-user@2x.jpg 2x"
+                      <img src="/assets/img-user.jpg"
+                           srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
                            loading="lazy"
                            class="img-avatar"
                            alt="Grifinória">
@@ -26,7 +26,7 @@
                 </div>
               </div>
               <h1 class="mb-0">
-                Milena Ramiro
+                {{ user.nome }}
               </h1>
               <span class="user-category text-dark">
                 nutela
@@ -70,7 +70,7 @@
         </div>
       </div>
     </div>
-    <img src="../../../assets/ic-shape.svg"
+    <img src="/assets/ic-shape.svg"
          loading="lazy"
          width="360"
          height="49"

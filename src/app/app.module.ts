@@ -10,11 +10,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { MenuComponent } from './components/menu/menu.component';
+import { NgxsModule } from '@ngxs/store';
+import { UserState } from './shared/user.state';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   entryComponents: [],
   imports: [
+    NgxsModule.forRoot(
+      [UserState],
+      { developmentMode: !environment.production },
+    ),
   BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

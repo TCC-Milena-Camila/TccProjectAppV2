@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 import { UserModel } from '../../shared/models/user.model';
 import { catchError, map } from 'rxjs/operators';
 import { ApiResponseModel } from '../models/api-response.model';
+import { LoginRequestModel } from './../models/login-request.model';
 
 @Injectable()
 export class ContaService {
@@ -20,7 +21,7 @@ export class ContaService {
     private _storageService: StorageService
   ) {}
 
-  login(usuario: LoginUserModel) {
+  login(usuario: LoginRequestModel) {
     const auth$ = this._apiService.post$(this._authenticateUrl, usuario);
 
     return auth$.pipe(
@@ -36,6 +37,10 @@ export class ContaService {
   salvarDadosLocaisUsuario(response: any): void {
     this._storageService.set$(this._storageTokenKey, response.acessToken);
     this._storageService.set$(this._storageUserKey, response.usuario);
+  }
+
+  salvarTokenUsuario(accessToken: string): void {
+    this._storageService.set$(this._storageTokenKey, accessToken);
   }
 
   public obterTokenUsuarioStorage(): Observable<string> {

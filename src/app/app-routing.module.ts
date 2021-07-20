@@ -34,6 +34,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
+  providers: [
+    ContaGuard
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
