@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Achievement } from '../../../interfaces/achievement';
+import { ConquistaModel } from '../../../shared/models/conquista.model';
 
 @Component({
   selector: 'app-slider-achievements',
@@ -8,21 +9,11 @@ import { Achievement } from '../../../interfaces/achievement';
 })
 export class SliderAchievementsComponent implements OnInit {
 
-  achievements: Achievement[] = [];
+  @Input()
+  conquistas: ConquistaModel[];
 
   constructor() { }
 
   ngOnInit() {
-
-    this.achievements = [
-      {
-        iconName: 'Jardineiro',
-        iconURL: '/assets/ic-medal-garden.svg',
-      },
-      {
-        iconName: 'Gari',
-        iconURL: '/assets/ic-medal-trash.svg',
-      },
-    ];
   }
 }

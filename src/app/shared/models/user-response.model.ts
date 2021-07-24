@@ -1,3 +1,5 @@
+import { ConquistaModel } from './conquista.model';
+
 export class UserResponseModel {
   nome: string;
   email: string;
@@ -6,4 +8,5 @@ export class UserResponseModel {
   pontuacao: number;
   ranking: number;
   time: string;
+  conquistas: ConquistaModel[];
 }

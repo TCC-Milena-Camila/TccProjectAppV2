@@ -1,8 +1,6 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {NgCircleProgressModule} from 'ng-circle-progress';
+import {Component, OnInit} from '@angular/core';
 import {UserModel} from '../../shared/models/user.model';
 import {ContaService} from '../../conta/services/conta.service';
-import {map} from 'rxjs/operators';
 import { Select, Store } from '@ngxs/store';
 import { UserState } from 'src/app/shared/user.state';
 import { Observable } from 'rxjs';
@@ -18,17 +16,7 @@ export class HomePage implements OnInit {
   @Select(UserState.getUser)
   user$: Observable<UserModel>;
 
-
-  // user: UserModel = {
-  //   id: '',
-  //   email: '',
-  //   nome: '',
-  //   pontuacao: 0,
-  //   ranking: 0,
-  //   time: ''
-  // };
-
-  constructor(private contaService: ContaService, private store: Store,) {
+  constructor(private store: Store) {
   }
 
   ngOnInit() {

@@ -15,6 +15,7 @@ export class UserService {
   }
 
   get$(): Observable<UserModel> {
+
     return this.apiService
       .get$(this._associateUrl)
       .pipe(

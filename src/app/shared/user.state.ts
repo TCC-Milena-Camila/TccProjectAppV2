@@ -58,6 +58,7 @@ export class UserState{
 
     const state = ctx.getState();
     const getUser$ = this.userService.get$();
+    console.log('usuario: ', getUser$);
 
     getUser$.subscribe({
       next: (user) => {

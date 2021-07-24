@@ -29,7 +29,7 @@
                 {{ user.nome }}
               </h1>
               <span class="user-category text-dark">
-                nutela
+                {{ user.nivel }}
               </span>
             </div>
           </div>
@@ -37,12 +37,12 @@
         <div class="row ion-justify-content-center">
           <div class="col-5">
             <div class="user-tags">
-              grifinória
+              {{ user.time }}
             </div>
           </div>
           <div class="col-5">
             <div class="user-tags">
-              backend
+              {{ user.profissao }}
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
               seu ranking
             </h2>
             <span class="user-rank-position">
-              1º
+              {{ user.ranking }}
             </span>
           </div>
           <div class="col-6">
@@ -64,7 +64,7 @@
               suas conquistas
             </h2>
             <span class="user-rank-position">
-              2
+              {{ user.conquistas?.length }}
             </span>
           </div>
         </div>
@@ -80,7 +80,7 @@
       <h2 class="mb-1">
         conquistas
       </h2>
-      <app-slider-achievements></app-slider-achievements>
+      <app-slider-achievements [conquistas]="user.conquistas" ></app-slider-achievements>
     </div>
   </main>
 </ion-content>

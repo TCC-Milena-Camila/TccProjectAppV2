@@ -1,4 +1,5 @@
 import { UserResponseModel } from './user-response.model';
+import { ConquistaModel } from './conquista.model';
 
 export class UserModel {
   nome: string;
@@ -8,6 +9,7 @@ export class UserModel {
   pontuacao: number;
   ranking: number;
   time: string;
+  conquistas: ConquistaModel[];
 
   constructor(userResponse?: UserResponseModel){
     if (!userResponse) {
@@ -21,5 +23,6 @@ export class UserModel {
     this.pontuacao = userResponse.pontuacao;
     this.ranking = userResponse.ranking;
     this.time = userResponse.time;
+    this.conquistas = userResponse.conquistas;
   }
 }
