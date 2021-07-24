@@ -1,3 +1,25 @@
-.my-custom-menu {
-  --width: 500px;
+ion-content::part(background) {
+
+  background: -webkit-image-set(url("../../../assets/bg-menu.png") 1x, url("../../../assets/bg-menu@2x.png") 2x) #5A1311 no-repeat;
+  background-size: cover;
+}
+
+.nav {
+
+  &bar-nav {
+
+    padding: 5rem 1.75rem;
+  }
+
+  &-item {
+
+    font-family: 'Ubuntu';
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
