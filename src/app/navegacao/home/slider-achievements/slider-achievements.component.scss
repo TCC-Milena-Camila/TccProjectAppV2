@@ -1,0 +1,10 @@
+.achievement-item {
+
+  &-title {
+
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-size: convert-to-rem(12px);
+    text-transform: uppercase;
+  }
+}

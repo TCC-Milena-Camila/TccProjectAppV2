@@ -1,17 +1,12 @@
-<swiper [slidesPerView]="2"
-        [spaceBetween]="50">
-  <ng-template swiperSlide
-               *ngFor="let achievement of achievements">
-    <div class="d-flex flex-column ion-align-items-center">
-      <img [src]="achievement.iconURL"
-           [title]="'Medalha consquistada:' + achievement.iconName"
-           [alt]="'Medalha consquistada:' + achievement.iconName"
-           loading="lazy"
-           class="img-sanitize mb-0h"
-           width="42" height="55">
-      <span class="ion-text-uppercase" style="font-size: .75rem">
-        {{ achievement.iconName }}
-      </span>
-    </div>
-  </ng-template>
-</swiper>
+<div class="d-flex flex-column ion-align-items-center">
+  <img [src]="achievement.iconURL"
+       [title]="'Medalha consquistada:' + achievement.iconName"
+       [alt]="'Medalha consquistada:' + achievement.iconName"
+       loading="lazy"
+       class="img-sanitize mb-0h"
+       width="42"
+       height="55">
+  <span class="achievement-item-title">
+    {{ achievement.iconName }}
+  </span>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Achievement } from '../../../interfaces/achievement';
 
 @Component({
@@ -8,21 +8,23 @@ import { Achievement } from '../../../interfaces/achievement';
 })
 export class SliderAchievementsComponent implements OnInit {
 
-  achievements: Achievement[] = [];
+  @Input() achievement: Achievement;
 
-  constructor() { }
+  achievements = [
+    {
+      iconName: 'Jardineiro',
+      iconURL: '/assets/ic-medal-garden.svg',
+    },
+    {
+      iconName: 'Gari',
+      iconURL: '/assets/ic-medal-trash.svg',
+    },
+  ];
+
+  constructor() {
+  }
 
   ngOnInit() {
 
-    this.achievements = [
-      {
-        iconName: 'Jardineiro',
-        iconURL: '/assets/ic-medal-garden.svg',
-      },
-      {
-        iconName: 'Gari',
-        iconURL: '/assets/ic-medal-trash.svg',
-      },
-    ];
   }
 }
