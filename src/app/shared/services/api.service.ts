@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-import { ApiResponseModel } from 'src/app/conta/models/api-response.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {throwError} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
+import {ApiResponseModel} from 'src/app/conta/models/api-response.model';
 
 
 @Injectable()
@@ -25,7 +25,6 @@ export class ApiService {
 
     return getService$.pipe(
       map((response: ApiResponseModel) => response.data),
-      //map((sucess: boolean) => sucess),
       catchError((response)=>{
         console.log(response);
         return throwError(

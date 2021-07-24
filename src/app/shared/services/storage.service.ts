@@ -5,9 +5,7 @@ import { Storage } from '@capacitor/storage';
 
 @Injectable()
 export class StorageService {
-
   set$(key: string, value: any): Observable<void> {
-
     const setPromise = Storage.set({ key, value: JSON.stringify(value) });
     const set$ = from(setPromise);
 
@@ -18,37 +16,22 @@ export class StorageService {
   }
 
   get$(key: string): Observable<any> {
-
     const getPromise = Storage.get({ key });
-    const get$ = from(getPromise)
-        .pipe(
-            map((item) => JSON.parse(item.value)),
-        );
+    const get$ = from(getPromise).pipe(map((item) => JSON.parse(item.value)));
 
-    return from(Storage.migrate())
-        .pipe(
-            switchMap(() => get$),
-        );
+    return from(Storage.migrate()).pipe(switchMap(() => get$));
   }
 
   remove(key: string) {
-
     const removePromise = Storage.remove({ key });
     const remove$ = from(removePromise);
 
-    return from(Storage.migrate())
-        .pipe(
-            switchMap(() => remove$),
-        );
+    return from(Storage.migrate()).pipe(switchMap(() => remove$));
   }
 
   clear(): Observable<void> {
-
     const clear$ = from(Storage.clear());
 
-    return from(Storage.migrate())
-        .pipe(
-            switchMap(() => clear$),
-        );
+    return from(Storage.migrate()).pipe(switchMap(() => clear$));
   }
 }

@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './components/menu/menu.component';
+import {ContaGuard} from './conta/services/conta.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./conta/login/login.module').then( m => m.LoginPageModule)
-  },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./conta/login/login.module').then( m => m.LoginPageModule)
+  // },
   {
     path: 'login',
+    canActivate: [],
     loadChildren: () => import('./conta/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: '',
+    canLoad:[ContaGuard],
+    canActivateChild:[ContaGuard],
     component: MenuComponent,
     children: [
       {
@@ -29,6 +33,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  providers: [
+    ContaGuard
   ],
   exports: [RouterModule]
 })

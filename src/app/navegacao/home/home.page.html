@@ -1,6 +1,6 @@
-<ion-content>
+<ion-content *ngIf="(user$ | async) as user">
   <main>
-    <img src="../../../assets/ic-grifinoria.svg"
+    <img src="/assets/ic-grifinoria.svg"
          loading="lazy"
          width="360"
          height="221"
@@ -9,7 +9,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <div class="mt-n8 mb-2 ion-text-center">
+    <section class="mt-n8 mb-2 ion-text-center">
       <div class="container">
         <div class="mb-1">
           <div class="row ion-justify-content-center">
@@ -19,8 +19,8 @@
                 <div class="img-avatar-position">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
-                      <img src="../../../assets/img-user.jpg"
-                           srcset="../../../assets/img-user.jpg, ../../../assets/img-user@2x.jpg 2x"
+                      <img src="/assets/img-user.jpg"
+                           srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
                            loading="lazy"
                            class="img-avatar"
                            alt="Grifinória">
@@ -29,10 +29,10 @@
                 </div>
               </div>
               <h1 class="mb-0">
-                Milena Ramiro
+                {{ user.nome }}
               </h1>
               <span class="user-category text-dark">
-                nutela
+                {{ user.nivel }}
               </span>
             </div>
           </div>
@@ -40,18 +40,18 @@
         <div class="row ion-justify-content-center">
           <div class="col-5">
             <div class="user-tags">
-              grifinória
+              {{ user.time }}
             </div>
           </div>
           <div class="col-5">
             <div class="user-tags">
-              backend
+              {{ user.profissao }}
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container">
+    </section>
+    <section class="container">
       <div class="text-center">
         <div class="row">
           <div class="col-6">
@@ -59,7 +59,7 @@
               seu ranking
             </h2>
             <span class="user-rank-position">
-              1º
+              {{ user.ranking }}
             </span>
           </div>
           <div class="col-6">
@@ -67,29 +67,29 @@
               suas conquistas
             </h2>
             <span class="user-rank-position">
-              2
+              {{ user.conquistas?.length }}
             </span>
           </div>
         </div>
       </div>
-    </div>
-    <img src="../../../assets/ic-shape.svg"
+    </section>
+    <img src="/assets/ic-shape.svg"
          loading="lazy"
          width="360"
          height="49"
          class="img-cover-width"
          alt="Grifinória">
-    <div class="achievements">
+    <section class="achievements">
       <div class="container">
         <h2 class="mb-1">
           conquistas
         </h2>
         <div class="row">
-          <div class="col-auto" *ngFor="let achievement of achievements">
-            <app-slider-achievements [achievement]="achievement"></app-slider-achievements>
+          <div class="col-auto" *ngFor="let conquista of user.conquistas">
+            <app-slider-achievements [conquista]="conquista" ></app-slider-achievements>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 </ion-content>

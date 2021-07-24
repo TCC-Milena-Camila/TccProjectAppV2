@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { NgCircleProgressModule } from 'ng-circle-progress';
-import { Achievement } from '../../interfaces/achievement';
-import { SliderAchievementsComponent } from './slider-achievements/slider-achievements.component';
+import {UserModel} from '../../shared/models/user.model';
+import { Select, Store } from '@ngxs/store';
+import { UserState } from 'src/app/shared/user.state';
+import { Observable } from 'rxjs';
+import { UserActions } from 'src/app/shared/user.actions';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage extends SliderAchievementsComponent implements OnInit {
+export class HomePage implements OnInit {
 
-  constructor() {
-    super();
+  @Select(UserState.getUser)
+  user$: Observable<UserModel>;
+
+  constructor(private store: Store) {
   }
 
   ngOnInit() {
+    this.store.dispatch(new UserActions.Get())
   }
 
 }
