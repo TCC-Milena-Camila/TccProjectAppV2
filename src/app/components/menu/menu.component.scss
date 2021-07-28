@@ -1,7 +1,15 @@
-ion-content::part(background) {
+ion {
 
-  background: -webkit-image-set(url("../../../assets/bg-menu.png") 1x, url("../../../assets/bg-menu@2x.png") 2x) #5A1311 no-repeat;
-  background-size: cover;
+  &-content::part(background) {
+
+    background: -webkit-image-set(url("../../../assets/bg-menu.png") 1x, url("../../../assets/bg-menu@2x.png") 2x) var(--ion-color-primary) no-repeat;
+    background-size: cover;
+  }
+
+  &-icon {
+
+    display: none;
+  }
 }
 
 .nav {
@@ -21,5 +29,18 @@ ion-content::part(background) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &-link-active {
+
+    color: var(--ion-color-tertiary);
+
+    ion-icon {
+
+      display: inline-block;
+      font-size: 22px;
+      vertical-align: sub;
+      margin-left: .5rem;
+    }
   }
 }

@@ -1,21 +1,19 @@
-<ion-content *ngIf="(user$ | async) as user">
-  <main>
-    <img src="/assets/ic-grifinoria.svg"
+<ion-content *ngIf="(user$ | async) as user" class="{{ user.time }}">
+  <app-header></app-header>
+  <main class="position-relative">
+    <img src="/assets/ic-{{ user.time }}.svg"
          loading="lazy"
          width="360"
          height="221"
          class="img-sanitize img-cover-width"
-         alt="Grifinória">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
+         alt="{{ user.time }}">
     <section class="mt-n8 mb-2 ion-text-center">
       <div class="container">
         <div class="mb-1">
           <div class="row ion-justify-content-center">
             <div class="col-7">
               <div class="position-relative mb-0hq">
-                <circle-progress [percent]="35"></circle-progress>
+                <circle-progress [outerStrokeColor]="" [percent]="user.pontuacao"></circle-progress>
                 <div class="img-avatar-position">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
@@ -92,4 +90,5 @@
       </div>
     </section>
   </main>
+  <app-footer></app-footer>
 </ion-content>

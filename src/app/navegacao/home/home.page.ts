@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserModel} from '../../shared/models/user.model';
+import { UserModel } from '../../shared/models/user.model';
 import { Select, Store } from '@ngxs/store';
 import { UserState } from 'src/app/shared/user.state';
 import { Observable } from 'rxjs';
@@ -19,7 +19,6 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new UserActions.Get())
+    this.store.dispatch(new UserActions.Get());
   }
-
 }
