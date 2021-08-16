@@ -13,7 +13,7 @@ import { HeaderComponent } from './../components/header/header.component';
   ],
   entryComponents:[],
   imports: [
-  RouterModule,
+    RouterModule,
     SharedModule
   ],
   exports:[
