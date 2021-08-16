@@ -2,7 +2,7 @@ ion {
 
   &-content::part(background) {
 
-    background: -webkit-image-set(url("../../../assets/bg-menu.png") 1x, url("../../../assets/bg-menu@2x.png") 2x) var(--ion-color-primary) no-repeat;
+    background: -webkit-image-set(url("../../../assets/bg-menu.png") 1x, url("../../../assets/bg-menu@2x.png") 2x) no-repeat;
     background-size: cover;
   }
 
@@ -17,6 +17,7 @@ ion {
   &bar-nav {
 
     padding: 5rem 1.75rem;
+    height: 100%;
   }
 
   &-item {
