@@ -10,7 +10,8 @@ export class MenuComponent implements OnInit {
 
   constructor(private menu: MenuController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   openFirst() {
     this.menu.enable(true, 'first');

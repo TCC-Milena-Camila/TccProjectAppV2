@@ -1,19 +1,20 @@
-<ion-content *ngIf="(user$ | async) as user" class="{{ user.time }}">
+<ion-content *ngIf="(user$ | async) as user" class="{{ user.time?.titulo }}">
   <app-header></app-header>
   <main class="position-relative">
-    <img src="/assets/ic-{{ user.time }}.svg"
+    <img src="/assets/ic-{{ user.time?.titulo }}.svg"
          loading="lazy"
          width="360"
          height="221"
          class="img-sanitize img-cover-width"
-         alt="{{ user.time }}">
+         alt="{{ user.time?.icone }}">
+  
     <section class="mt-n8 mb-2 ion-text-center">
       <div class="container">
         <div class="mb-1">
           <div class="row ion-justify-content-center">
             <div class="col-7">
               <div class="position-relative mb-0hq">
-                <circle-progress [outerStrokeColor]="" [percent]="user.pontuacao"></circle-progress>
+                <circle-progress [outerStrokeColor]="user.time?.corHexa" [percent]="user.pontuacao"></circle-progress>
                 <div class="img-avatar-position">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
@@ -38,7 +39,7 @@
         <div class="row ion-justify-content-center">
           <div class="col-5">
             <div class="user-tags">
-              {{ user.time }}
+              {{ user.time?.titulo }}
             </div>
           </div>
           <div class="col-5">

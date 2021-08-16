@@ -1,4 +1,5 @@
 import { ConquistaModel } from './conquista.model';
+import { Time } from './time.model';
 
 export class UserResponseModel {
   nome: string;
@@ -7,6 +8,6 @@ export class UserResponseModel {
   profissao: string;
   pontuacao: number;
   ranking: number;
-  time: string;
+  time: Time;
   conquistas: ConquistaModel[];
 }

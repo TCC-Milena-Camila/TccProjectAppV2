@@ -28,7 +28,7 @@ export class ContaService {
       //tap(next => this.store.set('user', next)),
       map((response: ApiResponseModel) => response.data),
       catchError((error) => {
-        console.log(error);
+        console.log('erro na aut: ', error);
         return throwError(error);
       })
     );

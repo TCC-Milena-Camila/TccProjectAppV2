@@ -62,12 +62,13 @@ export class UserState{
 
     getUser$.subscribe({
       next: (user) => {
+        console.log('user', user)
         ctx.setState({
           ...state,
           isLoaded: true,
           user,
         });
-
+    
         this.store.dispatch(new UserActions.GetSuccess());
       },
       error: (err) => {
