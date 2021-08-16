@@ -21,11 +21,10 @@ import { environment } from 'src/environments/environment';
   ],
   entryComponents: [],
   imports: [
-    NgxsModule.forRoot(
-      [UserState],
-      { developmentMode: !environment.production },
-    ),
-  BrowserModule,
+    NgxsModule.forRoot([UserState], {
+      developmentMode: !environment.production,
+    }),
+    BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     NavegacaoModule,
