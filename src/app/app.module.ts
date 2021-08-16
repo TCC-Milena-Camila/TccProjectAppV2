@@ -15,7 +15,10 @@ import { UserState } from './shared/user.state';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent],
+  declarations: [
+      AppComponent,
+      MenuComponent,
+  ],
   entryComponents: [],
   imports: [
     NgxsModule.forRoot([UserState], {

@@ -1,4 +1,9 @@
 .btn {
 
   text-transform: uppercase;
+
+  &-menu {
+
+    color: $warning;
+  }
 }
