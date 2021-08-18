@@ -1,3 +1,4 @@
+
 <ion-content *ngIf="(user$ | async) as user" class="{{ user.time?.titulo }}">
   <app-header></app-header>
   <main class="position-relative">
@@ -15,6 +16,7 @@
             <div class="col-7">
               <div class="position-relative mb-0hq">
                 <circle-progress [outerStrokeColor]="user.time?.corHexa" [percent]="user.pontuacao"></circle-progress>
+
                 <div class="img-avatar-position">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
