@@ -6,10 +6,10 @@ import {
   StateToken,
   Store,
 } from '@ngxs/store';
-import {UserModel} from './models/user.model';
-import {Injectable} from '@angular/core';
-import {UserActions} from './user.actions';
-import {UserService} from './services/user.service';
+import { UserModel } from './models/user.model';
+import { Injectable } from '@angular/core';
+import { UserActions } from './user.actions';
+import { UserService } from './services/user.service';
 
 export const USER_STATE_TOKEN = new StateToken<UserStateModel>('UserState');
 
@@ -31,7 +31,7 @@ const defaultState: UserStateModel = {
   defaults: defaultState,
 })
 @Injectable()
-export class UserState{
+export class UserState {
   constructor(private store: Store, private userService: UserService) {
   }
 
@@ -62,13 +62,13 @@ export class UserState{
 
     getUser$.subscribe({
       next: (user) => {
-        console.log('user', user)
+        console.log('user', user);
         ctx.setState({
           ...state,
           isLoaded: true,
           user,
         });
-    
+
         this.store.dispatch(new UserActions.GetSuccess());
       },
       error: (err) => {
