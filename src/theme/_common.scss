@@ -1,4 +1,37 @@
 main {
 
   padding-bottom: 2rem;
+  min-height: 100%;
+}
+
+.img-avatar {
+
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50rem;
+}
+
+ion-segment {
+
+  ion-label {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ion-color-primary);
+    text-transform: uppercase;
+  }
+}
+
+ion-badge {
+  vertical-align: sub;
+}
+
+.position-center {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }

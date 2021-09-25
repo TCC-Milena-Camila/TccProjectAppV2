@@ -6,7 +6,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NavegacaoModule } from './../navegacao.module';
-import { SliderAchievementsModule } from './slider-achievements/slider-achievements.module';
+import { SliderAchievementsModule } from '../../components/slider-achievements/slider-achievements.module';
 
 @NgModule({
   imports: [

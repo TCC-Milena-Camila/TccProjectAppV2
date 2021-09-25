@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   @Input() title: string;
   @Input() shouldShowMenuButton = false;
   @Input() shouldShowNotificationButton = true;
+  @Input() svgColor: string;
 
   constructor() { }
 

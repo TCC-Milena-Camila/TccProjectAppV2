@@ -1,13 +1,12 @@
-
 <ion-content *ngIf="(user$ | async) as user" class="{{ user.time?.titulo }}">
   <app-header></app-header>
   <main class="position-relative">
-    <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+    <img src="/assets/bg-{{ user.time?.titulo }}.svg"
          loading="lazy"
          width="360"
          height="221"
          class="img-sanitize img-cover-width"
-         alt="{{ user.time?.icone }}">
+         alt="{{ user.time?.titulo }}">
   
     <section class="mt-n8 mb-2 ion-text-center">
       <div class="container">
@@ -16,8 +15,7 @@
             <div class="col-7">
               <div class="position-relative mb-0hq">
                 <circle-progress [outerStrokeColor]="user.time?.corHexa" [percent]="user.pontuacao"></circle-progress>
-
-                <div class="img-avatar-position">
+                <div class="img-avatar position-center">
                   <div class="row ion-justify-content-center">
                     <div class="col-9">
                       <img src="/assets/img-user.jpg"
@@ -52,8 +50,8 @@
         </div>
       </div>
     </section>
-    <section class="container">
-      <div class="text-center">
+    <section class="text-center mb-2">
+      <div class="container">
         <div class="row">
           <div class="col-6">
             <h2 class="user-rank-title">

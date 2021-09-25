@@ -2,7 +2,7 @@
   <!--  the side menu  -->
   <ion-menu side="start"
             content-id="main">
-    <ion-content>
+    <ion-content *ngIf="(user$ | async) as user" class="{{ user.time?.titulo }}">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link"
@@ -11,21 +11,23 @@
              aria-current="page"
              href="#">
             Home
-            <ion-icon name="footsteps"></ion-icon>
+            <ion-icon routerLink="/home"
+                      routerLinkActive="d-inline-block"
+                      class="d-none"
+                      name="footsteps"></ion-icon>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled"
+          <a class="nav-link"
              routerLink="/ranking"
              routerLinkActive="nav-link-active"
-             aria-disabled="true"
-             href="#">
+             href="/ranking">
             Ranking
-            <ion-icon name="footsteps"></ion-icon>
+            <ion-icon routerLink="/ranking"
+                      routerLinkActive="d-inline-block"
+                      class="d-none"
+                      name="footsteps"></ion-icon>
           </a>
-          <ion-badge color="dark"
-                     slot="end">EM BREVE
-          </ion-badge>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled"
@@ -41,17 +43,13 @@
           </ion-badge>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled"
+          <a class="nav-link"
              routerLink="/missoes"
              routerLinkActive="nav-link-active"
-             aria-disabled="true"
-             href="#">
+             href="/missoes">
             Missões
             <ion-icon name="footsteps"></ion-icon>
           </a>
-          <ion-badge color="dark"
-                     slot="end">EM BREVE
-          </ion-badge>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled"

@@ -1,0 +1,116 @@
+<ion-content *ngIf="(user$ | async) as user"
+             class="{{ user.time?.titulo }}">
+  <app-header></app-header>
+  <main class="position-relative">
+    <div class="mb-2">
+      <app-internal-header></app-internal-header>
+    </div>
+    <section class="position-relative ion-text-center mt-n7 mb-2">
+      <div class="row ion-justify-content-center">
+        <div class="col-6">
+          <div class="position-relative mb-1">
+            <circle-progress [outerStrokeColor]="user.time?.corHexa"
+                             [percent]="user.pontuacao"></circle-progress>
+            <div class="position-center fill-color">
+              <svg width="36"
+                   height="36"
+                   viewBox="0 0 36 36"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M35.992 16.7461C35.8772 15.2241 35.2626 14.0454 34.6366 14.0645C34.2443 14.1155 33.8936 14.6898 33.7648 15.6065L24.3392 16.8456L26.2758 13.448C26.6266 12.8755 26.5529 12.0512 26.0236 11.7376L15.314 5.40115C14.7843 5.08803 14.0079 5.41003 13.6576 5.98252L12.85 7.24387C12.6927 5.9088 12.0898 4.59371 10.6042 3.71699C8.3792 2.39924 6.03173 2.92643 4.72376 5.06361C2.12816 9.24203 3.28608 15.9591 3.89351 20.1535L0.205532 24.9973C-0.146996 25.5698 -0.0416893 26.3426 0.488006 26.6557L14.2745 32.8603C14.8042 33.1738 15.5595 32.9451 15.9436 32.3202L20.9238 22.9516L33.847 17.8916C34.0586 18.902 34.5444 19.5824 35.033 19.5513C35.6585 19.5309 36.0625 18.2797 35.992 16.7461ZM11.3703 9.42102L4.87245 18.6732C4.04944 15.4182 3.8899 8.90005 5.83512 5.72137C6.76119 4.21042 8.30056 3.87865 9.94478 4.85131C11.8534 5.97986 11.7115 8.09705 11.3703 9.42102Z" />
+              </svg>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      <h1 class="text-uppercase fs-2 text-secondary">
+        aguar ipê
+      </h1>
+      <span>
+        última vez:
+        <span class="fw-bold">
+          Ontem às 22h32
+        </span>
+      </span>
+    </section>
+    <div class="container">
+      <div class="card-tips mb-1hq">
+        <div class="row no-gutters ion-align-items-center">
+          <div class="col-auto">
+            <div class="ion-text-left fw-bold mr-1">
+              <div class="row no-gutters ion-align-items-center">
+                <div class="col-auto">
+                  <img src="/assets/ic-coin.svg"
+                       loading="lazy"
+                       width="21"
+                       height="21"
+                       class="img-fluid mr-0q"
+                       alt="Moedas">
+                </div>
+                <div class="col-auto">
+                  +10
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p class="mb-0">
+              Execute esta missão por 7 dias consecutivos, para ganhar o Selo
+              Jardineiro + 10 coins
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-target mb-1hq">
+        <h2 class="card-target-title">
+          objetivo
+        </h2>
+        <div class="row no-gutters ion-align-items-center">
+          <div class="col-auto">
+            <div class="ion-text-left fw-bold mr-1">
+              <div class="row no-gutters ion-align-items-center">
+                <div class="col-auto">
+                  <img src="/assets/ic-coin.svg"
+                       loading="lazy"
+                       width="21"
+                       height="21"
+                       class="img-fluid mr-0q"
+                       alt="Moedas">
+                </div>
+                <div class="col-auto">
+                  +10
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p class="mb-0">
+              Aguar o Ipê dos fundos por 5 minutos.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-target mb-2h">
+        <h2 class="card-target-title">
+          regras
+        </h2>
+        <ul class="list-unstyled">
+          <li>
+            1 - O Ipê é sensivel, você deve sempre enviar mensagens positivas no momento da missão.
+          </li>
+          <li>
+            2 - Muito cuidado para não matar o Ipê afogado!
+          </li>
+        </ul>
+      </div>
+      <div class="row ion-justify-content-center">
+        <div class="col-8">
+          <a class="btn btn-lg btn-block btn-secondary rounded-pill">
+            iniciar
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</ion-content>

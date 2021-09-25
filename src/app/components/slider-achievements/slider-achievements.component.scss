@@ -1,0 +1,30 @@
+.achievement-item {
+
+  &-title {
+
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-size: convert-to-rem(12px);
+    text-transform: uppercase;
+  }
+
+  &-position {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.fill-color {
+  fill: var(--ion-color-secondary);
+
+  &-tertiary {
+    fill: var(--ion-color-tertiary);
+  }
+}

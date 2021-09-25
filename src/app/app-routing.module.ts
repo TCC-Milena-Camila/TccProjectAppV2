@@ -19,9 +19,23 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('./navegacao/home/home.module').then(
             m => m.HomePageModule),
+      },
+      {
+        path: 'ranking',
+        loadChildren: () => import('./navegacao/ranking/ranking.module').then(
+            m => m.RankingModule),
+      },
+      {
+        path: 'missoes',
+        loadChildren: () => import('./navegacao/missions/missions.module').then(
+            m => m.MissionsPageModule),
+      },
+      {
+        path: 'missao',
+        loadChildren: () => import('./navegacao/mission/mission.module').then( m => m.MissionPageModule)
       }
     ]
-  }
+  },
 
 
 ];

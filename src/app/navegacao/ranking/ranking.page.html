@@ -1,0 +1,292 @@
+<ion-content *ngIf="(user$ | async) as user"
+             class="{{ user.time?.titulo }}">
+  <app-header></app-header>
+  <main class="position-relative">
+    <div class="mb-2">
+      <app-internal-header pageTitle="Ranking"></app-internal-header>
+    </div>
+    <section class="ion-text-center">
+      <div class="container">
+        <div class="mb-3">
+          <ion-segment value="global" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="global">
+              <ion-label>Global</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="clã">
+              <ion-label>Clã</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        <div *ngIf="filter === 'global'">
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="card-user-name ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="filter === 'clã'">
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="card-user-name ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+          <div class="card-user">
+            <div class="row no-gutters ion-align-items-center">
+              <div class="col-10">
+                <div class="row no-gutters ion-align-items-center">
+                  <div class="col-auto">
+                    <span class="rank-position">
+                      {{ user.ranking }}º
+                    </span>
+                  </div>
+                  <div class="col-3">
+                    <img src="/assets/img-user.jpg"
+                         srcset="/assets/img-user.jpg, /assets/img-user@2x.jpg 2x"
+                         loading="lazy"
+                         class="img-avatar ml-0h p-0h"
+                         alt="Grifinória">
+                  </div>
+                  <div class="col-7">
+                    <div class="ion-text-left px-1 fw-bold">
+                      Milena Ramiro
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <img src="/assets/ic-{{ user.time?.titulo }}.svg"
+                     loading="lazy"
+                     width="360"
+                     height="221"
+                     class="img-sanitize img-cover-width px-0h"
+                     alt="{{ user.time?.titulo }}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</ion-content>

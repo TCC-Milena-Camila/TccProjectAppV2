@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ConquistaModel } from '../../../shared/models/conquista.model';
+import { ConquistaModel } from '../../shared/models/conquista.model';
 
 @Component({
   selector: 'app-slider-achievements',

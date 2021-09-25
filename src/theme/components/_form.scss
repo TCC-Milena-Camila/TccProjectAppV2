@@ -36,6 +36,7 @@ form {
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active
   {
+    background-color: $white;
     color: $primary !important;
     -webkit-box-shadow: 0 0 0 30px var(--ion-background-color) inset !important;
   }

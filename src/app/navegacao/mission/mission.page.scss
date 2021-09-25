@@ -1,0 +1,45 @@
+.fill-color {
+  fill: var(--ion-color-secondary);
+
+  svg {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.card {
+  &-tips {
+    padding: .75rem;
+    background-color: #e4e4e4;
+    border: 1px solid #F1F2D1;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  &-target {
+    padding: 1rem .75rem .75rem;
+    border-radius: 6px;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(black, 0.162669);
+    position: relative;
+
+    &-title {
+      text-transform: uppercase;
+      font-weight: 700;
+      display: inline-block;
+      background-color: var(--ion-background-color);
+      padding-inline: .75rem;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+ul {
+
+  li:not(:last-child) {
+
+    margin-bottom: .5rem;
+  }
+}
